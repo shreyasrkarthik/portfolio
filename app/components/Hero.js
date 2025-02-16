@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white rounded-lg shadow-xl">
+    <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-r from-white-100 via-white-800 to-white-100 text-white rounded-lg shadow-xl border-2 border-[#c8cefa]">
       {/* Left Side - Image */}
       <motion.div 
         initial={{ opacity: 0, x: -50 }} 
@@ -17,7 +17,7 @@ export default function Hero() {
           alt="Shreyas R K"
           layout="fill"
           objectFit="cover"
-          className="square-full bg-gradient-to-r from-cream-800 via-gray-800 to-cream-800"
+          className="square-full bg-[#c8cefa]"
         />
       </motion.div>
 
@@ -29,11 +29,11 @@ export default function Hero() {
         className="mt-8 md:mt-0 md:w-1/2 text-center md:text-left"
       >
         <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
-          Hey!
+          Hello!
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 leading-relaxed transition-transform duration-300 hover:scale-105">
+        <p className="text-lg md:text-xl text-white-300 leading-relaxed transition-transform duration-300 hover:scale-105">
           I’m Shreyas, a passionate Software Engineer, creating engaging content and impactful projects.  
-          I love sharing my journey and insights through Machine Learning and Distributed Systems, helping others grow along the way.
+          I love sharing my journey and insights about Machine Learning, Distributed Systems, and all things Software Engineering while hoping to help others grow along the way.
         </p>
       </motion.div>
     </section>
