@@ -1,3 +1,4 @@
+import CTA from "./components/CTA";
 import Hero from "./components/Hero";
 import YouTubeCarousel from "./components/YoutubeCarousel";
 
@@ -7,6 +8,9 @@ export default function Home() {
       <Hero />
       <div className="mt-4">
         <YouTubeCarousel />
+      </div>
+      <div className="mt-4">
+        <CTA/>
       </div>
     </main>
   );
