@@ -13,7 +13,7 @@ export default function NavBar() {
         {/* Logo + Title */}
         <div className="flex items-center space-x-3">
           {/* Logo (replace with your uploaded image) */}
-          <Image src="/srk_logo.png" alt="Website Logo" width={50} height={50} className="square-full" />
+          <Image src="/logo_no_bg.png" alt="Website Logo" width={50} height={50} className="square-full" />
 
           {/* Website Title */}
           <span className="text-2xl font-bold">Code, Content and Chronicles</span>
