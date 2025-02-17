@@ -25,7 +25,7 @@ export default function NavBar() {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] transition"
+              className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] hover:text-black transition"
             >
               {item}
             </Link>
@@ -48,7 +48,7 @@ export default function NavBar() {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] transition"
+              className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] hover:text-black transition"
               onClick={() => setIsOpen(false)}
             >
               {item}
