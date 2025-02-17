@@ -28,7 +28,7 @@ export default function Hero() {
         transition={{ duration: 1 }} 
         className="mt-8 md:mt-0 md:w-1/2 text-center md:text-left"
       >
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
+        <h1 className="text-5xl text-[#c8cefa] md:text-7xl font-extrabold mb-4">
           Hello!
         </h1>
         <p className="text-lg md:text-xl text-white-300 leading-relaxed transition-transform duration-300 hover:scale-105">

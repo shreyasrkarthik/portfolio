@@ -26,9 +26,9 @@ const CTA = () => {
         initial={{ opacity: 0, x: 50 }} 
         animate={{ opacity: 1, x: 0 }} 
         transition={{ duration: 1 }} 
-        className="flex flex-col items-center md:items-start justify-center text-center md:text-left"
+        className="flex flex-col items-center md:items-start justify-center font-extrabold text-center md:text-left"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-2">Want to collaborate?</h2>
+        <h1 className="text-5xl text-[#c8cefa] md:text-5xl font-bold mb-2">Want to collaborate?</h1>
         <p className="text-lg text-gray-300">Let's create something amazing together!</p>
         <a
           href="/contact" 
