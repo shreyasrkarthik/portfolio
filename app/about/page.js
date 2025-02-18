@@ -1,9 +1,12 @@
-import ContactForm from "../components/ContactForm" 
+import React from "react";
+import AboutTimeline from "../components/AboutTimeline";
 
-export default function Contact() {
+const AboutPage = () => {
   return (
-    <main className="w-full min-h-screen overflow-x-hidden">
-      <ContactForm/>
+    <main className="min-h-screen bg-black text-white">
+      <AboutTimeline />
     </main>
   );
-}
+};
+
+export default AboutPage;
