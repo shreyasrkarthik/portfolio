@@ -4,16 +4,17 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaGraduationCap, FaCode, FaUserGraduate, FaUniversity, FaChalkboardTeacher, FaArrowUp, FaServer, FaPodcast } from "react-icons/fa";
 
 const timelineData = [
-    { icon: <FaGraduationCap size={30} />, title: "Undergrad (2013-2017)", description: "Completed B.E. in Computer Science at PESIT, Bangalore, India." },
-    { icon: <FaUserGraduate size={30} />, title: "Internship at Quicken (2016)", description: "Worked as a software engineering intern, gaining hands-on experience in development." },
-    { icon: <FaUserGraduate size={30} />, title: "Internship at Juniper Networks (2017)", description: "Contributed to networking solutions as an intern." },
-    { icon: <FaCode size={30} />, title: "First Job - Ittiam Systems (2017-2019)", description: "Worked as a Software Engineer focusing on multimedia solutions." },
-    { icon: <FaArrowUp size={30} />, title: "Vymo (2019-2021)", description: "Joined Vymo as a Software Engineer, specializing in backend services." },
-    { icon: <FaUniversity size={30} />, title: "Grad Degree - Northeastern (2021-2023)", description: "Pursued an MS in Software Engineering at Northeastern University, Boston." },
-    { icon: <FaUserGraduate size={30} />, title: "Internship at PayPal (2022)", description: "Worked as a Software Engineering Intern in PayPal's Core Payments team." },
-    { icon: <FaChalkboardTeacher size={30} />, title: "Teaching Assistant (2022)", description: "Served as a TA at Northeastern University, assisting students in coursework." },
-    { icon: <FaServer size={30} />, title: "PayPal - Senior Software Engineer (2023-Present)", description: "Joined PayPal as a Senior Software Engineer in the Developer Productivity team." },
-    { icon: <FaPodcast size={30} />, title: "YouTube & Podcasts (2024)", description: "Started a YouTube channel and podcast discussing tech & career growth." }
+    { icon: <FaGraduationCap size={30} />, title: "Undergrad (2013-2017)", description: "Completed B.E. in Information Science at PESIT, Bangalore, India." },
+    { icon: <FaUserGraduate size={30} />, title: "Internship at Inmobi (2015)", description: "Worked as a big data intern for building advertisement solutions based on geo location." },
+    { icon: <FaUserGraduate size={30} />, title: "Internship at Quicken (2016)", description: "Worked as a software engineering intern for android team of quicken gaining hands-on experience in real world development." },
+    { icon: <FaUserGraduate size={30} />, title: "Internship at Juniper Networks (2017)", description: "Contributed to the Cloud team on building telemetry agent as an intern." },
+    { icon: <FaCode size={30} />, title: "First Job - Ittiam Systems (2017-2019)", description: "Worked as a Software Engineer focusing on building machine learning and backend solutions for Retail Analytics Platform." },
+    { icon: <FaArrowUp size={30} />, title: "Vymo (2019-2021)", description: "Joined Vymo as a Software Engineer, specializing in building ML based backend services and solutions."},
+    { icon: <FaUniversity size={30} />, title: "Grad Degree - Northeastern (2021-2023)", description: "Pursued an MS in Computer Science at Northeastern University, Boston." },
+    { icon: <FaUserGraduate size={30} />, title: "Internship at PayPal (2022)", description: "Worked as a Software Engineering Intern in PayPal's building data pipeline for migrating application metric logs for over 100 applications." },
+    { icon: <FaChalkboardTeacher size={30} />, title: "Teaching Assistant (2022)", description: "Served as a TA at Northeastern University, assisting students in Database and Mixed Reality." },
+    { icon: <FaServer size={30} />, title: "PayPal - Senior Software Engineer (2023-Present)", description: "Joined PayPal as a Senior Software Engineer and built multiple scalable cloud-native microservices that are used by 1000s of micro-services in the company." },
+    { icon: <FaPodcast size={30} />, title: "YouTube & Podcasts (2024)", description: "Started a YouTube channel and podcast discussing about varying interests." }
 ];
 
 const AboutTimeline = () => {
