@@ -62,7 +62,10 @@ const AboutTimeline = () => {
                         >
                             {item.icon}
                         </div>
-                        <div className={`absolute left-16 bg-[#c8cefa] p-3 rounded-lg shadow-lg w-full max-w-3xl transition-all duration-500 ${selectedIndex === index ? 'opacity-100' : 'opacity-30 blur-sm'}`}>
+                        <div 
+                            className={`absolute left-16 bg-[#c8cefa] p-3 rounded-lg shadow-lg w-full max-w-3xl transition-all duration-500 cursor-pointer ${selectedIndex === index ? 'opacity-100' : 'opacity-30 blur-sm'}`} 
+                            onClick={() => handleClick(index)}
+                        >
                             <h3 className="text-lg font-semibold text-black">{item.title}</h3>
                             <p className="text-sm text-gray-700">{item.description}</p>
                         </div>
