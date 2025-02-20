@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { FaGraduationCap, FaCode, FaUserGraduate, FaUniversity, FaChalkboardTeacher, FaArrowUp, FaServer, FaPodcast } from "react-icons/fa";
+import "tailwindcss/tailwind.css";
 
 const timelineData = [
     { icon: <FaGraduationCap size={30} />, title: "Undergrad (2013-2017)", description: "Completed B.E. in Information Science at PESIT, Bangalore, India." },
@@ -56,23 +57,27 @@ const AboutTimeline = () => {
                 {timelineData.map((item, index) => (
                     <div key={index} ref={(el) => (itemRefs.current[index] = el)} className="relative flex flex-col mb-6">
                         <div 
-                            className={`p-4 rounded-full cursor-pointer transition-all duration-300 ${selectedIndex === index ? 'text-[#eef0ff] scale-110' : 'text-[#c8cefa]'}`} 
+                            className={`p-4 rounded-full cursor-pointer transition-all duration-300 ${selectedIndex === index ? 'text-[#eef0ff] scale-110 animate-soft-glow' : 'text-[#c8cefa]'}`} 
                             onClick={() => handleClick(index)}
                         >
                             {item.icon}
                         </div>
-                        {selectedIndex === index && (
-                            <div className="absolute left-16 bg-[#c8cefa] p-3 rounded-lg shadow-lg w-full max-w-3xl">
-                                <h3 className="text-lg font-semibold text-black">{item.title}</h3>
-                                <p className="text-sm text-gray-700">{item.description}</p>
-                            </div>
-                        )}
+                        <div className={`absolute left-16 bg-[#c8cefa] p-3 rounded-lg shadow-lg w-full max-w-3xl transition-all duration-500 ${selectedIndex === index ? 'opacity-100' : 'opacity-30 blur-sm'}`}>
+                            <h3 className="text-lg font-semibold text-black">{item.title}</h3>
+                            <p className="text-sm text-gray-700">{item.description}</p>
+                        </div>
                         {index < timelineData.length - 1 && (
                             <div className="h-10 w-1 bg-gray-500 border-dotted"></div>
                         )}
                     </div>
                 ))}
             </div>
+
+            <style jsx>{`
+                @keyframes soft-glow {
+                    0% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px #eef0ff); }
+                }
+            `}</style>
         </div>
     );
 };
