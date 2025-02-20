@@ -16,12 +16,15 @@ const ContactForm = () => {
 
     const form = e.target;
     console.log(form);
-    // Send form data via EmailJS
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
     emailjs.sendForm(
-      'service_w6s88pn', // Replace with your EmailJS service ID
-      'template_o5jkp3o', // Replace with your EmailJS template ID
+      serviceId,
+      templateId,
       form,
-      't9-UKWiJlNC9DftoG' // Replace with your EmailJS user ID
+      userId
     )
     .then(
       (result) => {
