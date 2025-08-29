@@ -6,6 +6,12 @@ import { Menu, X } from "lucide-react";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navItems = [
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Resume", href: "/resume" },
+  ];
 
   return (
     <nav className="bg-gradient-to-r from-white-100 via-white-800 to-white-100 animate-gradient text-white p-1 shadow-md">
@@ -22,12 +28,13 @@ export default function NavBar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4">
           {["Home", "Projects", "Contact", "Resume", "About"].map((item) => (
+          {navItems.map((item) => (
             <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
+              key={item.name}
+              href={item.href}
               className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] hover:text-black transition"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </div>
@@ -56,6 +63,21 @@ export default function NavBar() {
           ))}
         </div>
       )}
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden flex flex-col items-center mt-2 py-2 space-y-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="px-4 py-2 border border-[#c8cefa] rounded-md hover:bg-[#c8cefa] hover:text-black transition"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        )}
     </nav>
   );
 }
