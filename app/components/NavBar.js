@@ -21,7 +21,7 @@ export default function NavBar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4">
-          {["Home", "Contact", "Resume", "About"].map((item) => (
+          {["Home", "Projects", "Contact", "Resume", "About"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
@@ -44,7 +44,7 @@ export default function NavBar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden flex flex-col items-center mt-2 py-2 space-y-2">
-          {["Home", "Contact", "Social", "About"].map((item) => (
+          {["Home", "Projects", "Contact", "Social", "About"].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
