@@ -31,7 +31,7 @@ const CTA = () => {
         <h1 className="text-5xl text-[#c8cefa] md:text-5xl font-bold mb-2">Want to collaborate?</h1>
         <p className="text-lg text-gray-300">Let's create something amazing together!</p>
         <a
-          href="/contact" 
+          href="#contact"
           className="font-semibold px-6 py-3 mt-4 rounded-lg shadow-md hover:bg-white-100 transition duration-300 border-2 border-[#c8cefa] hover:bg-[#c8cefa] hover:text-black"
         >
           Click Here
