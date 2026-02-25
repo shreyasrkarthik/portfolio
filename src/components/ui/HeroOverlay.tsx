@@ -35,28 +35,51 @@ export default function HeroOverlay() {
         </div>
       </section>
 
+      {/* HUD / Status Bar */}
+      <div className="fixed bottom-8 left-8 z-50 font-mono text-xs text-cyan-500/60 pointer-events-none hidden md:block">
+        <div>SYSTEM: ONLINE</div>
+        <div>TARGET: CLOUD_ARCHITECT</div>
+      </div>
+
       {/* Section: Timeline Spacers */}
-      {/* These empty sections force the scroll height to match the GSAP timeline */}
-      {careerData.map((node) => (
-        <section key={node.id} className="h-screen flex items-center p-20 pointer-events-auto">
+      {/* Reduced height to min-h-[70vh] to tighten the gaps */}
+      {careerData.map((node, index) => (
+        <section key={node.id} className="min-h-[70vh] flex items-center p-4 md:p-20 pointer-events-auto relative">
+          
+          {/* Connecting Line (Visual Guide) */}
+          <div className="absolute left-8 md:left-24 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-cyan-900/50 to-transparent hidden md:block" />
+          
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -30, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ margin: "-20% 0px -20% 0px" }}
-            transition={{ duration: 0.8 }}
-            className="bg-black/40 backdrop-blur-md p-8 rounded-xl border border-white/10 max-w-xl ml-auto md:ml-20"
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="bg-black/60 backdrop-blur-xl p-6 md:p-8 rounded-lg border border-cyan-500/20 shadow-[0_0_15px_rgba(0,212,255,0.1)] max-w-xl md:ml-24 relative overflow-hidden group ml-auto mr-auto md:mr-0"
           >
-            <h2 className="text-4xl font-bold text-cyan-400 mb-2">{node.company}</h2>
-            <h3 className="text-xl text-white mb-4">{node.title}</h3>
-            <p className="text-gray-400 mb-4 font-mono text-sm">{node.duration} • {node.location}</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-300">
+            {/* Tech Decoration: Corner brackets */}
+            <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-500/50" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-500/50" />
+            
+            <div className="flex items-baseline justify-between mb-2">
+               <h2 className="text-3xl font-bold text-cyan-400 font-display tracking-tight">{node.company}</h2>
+               <span className="text-xs font-mono text-cyan-500/50">0{index + 1}</span>
+            </div>
+            
+            <h3 className="text-lg text-white mb-3 font-medium border-b border-white/10 pb-2">{node.title}</h3>
+            <p className="text-gray-400 mb-4 font-mono text-xs uppercase tracking-wider text-cyan-200/60">{node.duration} • {node.location}</p>
+            
+            <ul className="space-y-2 text-gray-300 text-sm mb-5">
               {node.description.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-cyan-500 mt-1">›</span>
+                  {item}
+                </li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-wrap gap-2">
+            
+            <div className="flex flex-wrap gap-2">
               {node.skills.map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">
+                <span key={skill} className="px-2 py-1 bg-cyan-950/40 border border-cyan-900 text-cyan-300 text-[10px] uppercase tracking-wider rounded">
                   {skill}
                 </span>
               ))}
