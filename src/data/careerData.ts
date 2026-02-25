@@ -102,7 +102,13 @@ export const careerData: CareerNode[] = [
   }
 ];
 
-export const skillsData = [
+export interface Skill {
+  name: string;
+  category: string;
+  position: [number, number, number];
+}
+
+export const skillsData: Skill[] = [
   // Languages
   { name: "Go", category: "Language", position: [5, 3, -5] },
   { name: "Python", category: "Language", position: [3, 3, -7] },

@@ -79,7 +79,7 @@ export default function HeroOverlay() {
       {/* Section: Contact */}
       <section className="h-screen flex items-center justify-center pointer-events-auto">
          <div className="bg-black/80 p-12 rounded-2xl border border-white/10 text-center max-w-2xl">
-            <h2 className="text-4xl font-bold text-white mb-6">Let's build something remarkable.</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">Let&apos;s build something remarkable.</h2>
             <div className="flex justify-center gap-6 mb-8">
               <a href="#" className="text-gray-400 hover:text-white transition">LinkedIn</a>
               <a href="#" className="text-gray-400 hover:text-white transition">GitHub</a>
