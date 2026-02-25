@@ -1,36 +1,49 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 
+const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
+
+const providers = googleConfigured
+  ? [
+      GoogleProvider({
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      }),
+    ]
+  : [
+      CredentialsProvider({
+        name: "Disabled",
+        credentials: {},
+        async authorize() {
+          return null;
+        },
+      }),
+    ];
+
 export const authOptions = {
-  adapter: MongoDBAdapter(clientPromise),
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-  ],
+  ...(clientPromise ? { adapter: MongoDBAdapter(clientPromise) } : {}),
+  providers,
+  session: { strategy: "jwt" },
   callbacks: {
     async signIn({ user }) {
-      // Only allow your Google account to sign in
-      if (user.email === process.env.ADMIN_USER_ACCOUNT + "@gmail.com") {
-        return true;
-      }
-      return false;
+      if (!process.env.ADMIN_USER_ACCOUNT) return false;
+      return user?.email === `${process.env.ADMIN_USER_ACCOUNT}@gmail.com`;
     },
-    async session({ session, user }) {
-      session.user.id = user.id; // Attach user ID to session
+    async session({ session, token }) {
+      if (session?.user) session.user.id = token?.sub;
       return session;
     },
-    async redirect({ url, baseUrl }) {
-        return "/admin"; // Redirect to /admin after login
+    async redirect() {
+      return "/admin";
     },
   },
   pages: {
     signIn: "/auth/login",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "dev-secret-change-me",
 };
 
 const handler = NextAuth(authOptions);

@@ -1,41 +1,42 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-r from-white-100 via-white-800 to-white-100 text-white rounded-lg shadow-xl border-2 border-[#c8cefa]">
-      {/* Left Side - Image */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }} 
-        animate={{ opacity: 1, x: 0 }} 
-        transition={{ duration: 1 }} 
-        className="relative w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 overflow-hidden rounded-full shadow-lg"
-      >
-        <Image
-          src="/SRK.png" // Replace with your image path
-          alt="Shreyas R K"
-          layout="fill"
-          objectFit="cover"
-          className="square-full bg-[#c8cefa]"
-        />
-      </motion.div>
+    <section className="glass relative overflow-hidden p-6 sm:p-10">
+      <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-500/20 blur-3xl" />
+      <div className="absolute -left-20 bottom-0 h-52 w-52 rounded-full bg-violet-500/20 blur-3xl" />
 
-      {/* Right Side - Text */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }} 
-        animate={{ opacity: 1, x: 0 }} 
-        transition={{ duration: 1 }} 
-        className="mt-8 md:mt-0 md:w-1/2 text-center md:text-left"
-      >
-        <h1 className="text-5xl text-[#c8cefa] md:text-7xl font-extrabold mb-4">
-          Hello!
-        </h1>
-        <p className="text-lg md:text-xl text-white-300 leading-relaxed transition-transform duration-300 hover:scale-105">
-          I’m Shreyas, a passionate Software Engineer, creating engaging content and impactful projects.  
-          I love sharing my journey and insights about Machine Learning, Distributed Systems, and all things Software Engineering while hoping to help others grow along the way.
-        </p>
-      </motion.div>
+      <div className="relative grid items-center gap-8 md:grid-cols-[220px_1fr]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative mx-auto h-44 w-44 overflow-hidden rounded-2xl border border-cyan-300/40"
+        >
+          <Image src="/SRK.png" alt="Shreyas" fill className="object-cover" priority />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="space-y-4"
+        >
+          <p className="text-xs uppercase tracking-[0.25em] text-cyan-300">System online</p>
+          <h1 className="text-3xl font-extrabold leading-tight sm:text-5xl">
+            I build systems that scale.
+            <br />
+            <span className="text-violet-300">I create content that sticks.</span>
+          </h1>
+          <p className="max-w-2xl text-slate-300">
+            I&apos;m Shreyas — Software Engineer, builder, and creator. This is not a normal portfolio.
+            Explore the modules, play the mini-game, and decode how I think.
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 }

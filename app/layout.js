@@ -1,17 +1,21 @@
-"use client";
-
 import "./globals.css";
 import NavBar from "./components/NavBar";
-import { SessionProvider } from "next-auth/react";
+import Providers from "./providers";
+
+export const metadata = {
+  title: "ShreyasOS // Portfolio",
+  description: "Interactive portfolio of Shreyas — software engineer, builder, creator.",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white-100">
-        <SessionProvider>
+      <body>
+        <div className="bg-grid" aria-hidden="true" />
+        <Providers>
           <NavBar />
-          <main className="container mx-auto p-6">{children}</main>
-        </SessionProvider>
+          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">{children}</main>
+        </Providers>
       </body>
     </html>
   );

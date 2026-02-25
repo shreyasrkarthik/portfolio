@@ -1,24 +1,18 @@
 export default function ResumePage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
-      <h1 className="text-6xl font-bold mb-6 text-[#c8cefa]">My Resume</h1>
+    <div className="glass flex min-h-[80vh] flex-col p-5 sm:p-8">
+      <h1 className="mb-4 text-3xl font-bold text-violet-200">resume.pdf</h1>
 
-      {/* PDF Viewer Fullscreen */}
-      <div className="w-full max-w-5xl h-[85vh] border border-[#c8cefa] rounded-lg overflow-hidden">
-        <iframe
-          src="/Resume_SRK.pdf"
-          className="w-full h-full"
-          title="Resume"
-        ></iframe>
+      <div className="h-[70vh] w-full overflow-hidden rounded-xl border border-white/10">
+        <iframe src="/Resume_SRK.pdf" className="h-full w-full" title="Resume" />
       </div>
 
-      {/* Download Button */}
       <a
         href="/Resume_SRK.pdf"
         download="ShreyasRK_Resume.pdf"
-        className="mt-6 px-6 py-3 border border-[#c8cefa] text-[#c8cefa] rounded-md hover:bg-[#c8cefa] hover:text-black transition duration-200"
+        className="mt-4 inline-flex w-fit rounded-lg border border-cyan-300/50 px-4 py-2 text-sm text-cyan-200 transition hover:border-violet-300/60"
       >
-        Download Resume
+        Download resume
       </a>
     </div>
   );

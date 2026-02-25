@@ -15,13 +15,16 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-black text-white py-16">
-      <h1 className="text-4xl font-bold text-center text-[#c8cefa] mb-12">Projects</h1>
-      <div className="grid gap-8 md:grid-cols-2">
+    <main className="space-y-5">
+      <section className="glass p-6 sm:p-8">
+        <h1 className="text-3xl font-bold text-violet-200">projects.index</h1>
+        <p className="mt-1 text-sm text-slate-300">A few things I built and shipped.</p>
+      </section>
+      <section className="grid gap-4 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
-      </div>
+      </section>
     </main>
   );
 }
