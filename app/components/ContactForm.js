@@ -39,11 +39,16 @@ export default function ContactForm() {
         </button>
       </form>
 
-      <div className="mt-5 flex items-center gap-4 text-xl text-slate-300">
-        <a href="https://www.linkedin.com/in/shreyas-rk/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-        <a href="https://www.instagram.com/shreyas.rkarthik/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-        <a href="https://x.com/shreyasrkarthik" target="_blank" rel="noreferrer"><FaTwitter /></a>
-        <a href="https://github.com/shreyasrkarthik" target="_blank" rel="noreferrer"><FaGithub /></a>
+      <div className="mt-5 space-y-2 text-sm text-slate-300">
+        <div className="flex items-center gap-4 text-xl">
+          <a href="https://www.linkedin.com/in/shreyas-rk" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+          <a href="https://www.instagram.com/shreyas.rkarthik/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+          <a href="https://x.com/shreyasrkarthik" target="_blank" rel="noreferrer" aria-label="X/Twitter"><FaTwitter /></a>
+          <a href="https://github.com/shreyasrkarthik" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+        </div>
+        <p>LinkedIn: <a className="text-cyan-300 hover:underline" href="https://www.linkedin.com/in/shreyas-rk" target="_blank" rel="noreferrer">linkedin.com/in/shreyas-rk</a></p>
+        <p>Instagram: <span className="text-cyan-300">@shreyas.rkarthik</span></p>
+        <p>X/Twitter: <span className="text-cyan-300">@shreyasrkarthik</span></p>
       </div>
     </section>
   );
