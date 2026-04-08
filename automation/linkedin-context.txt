@@ -1,0 +1,39 @@
+Name: Shreyas Karthik
+Current role: Senior Member of Technical Staff at Salesforce (January 2026 to present)
+Location: San Francisco Bay Area
+Positioning:
+- Senior software engineer focused on cloud-native and distributed systems
+- Strong backend and platform orientation across Go, Python, GCP, AWS, Kafka, Kubernetes, event-driven systems
+- Also interested in applied machine learning where it creates measurable impact
+
+Career highlights:
+- Salesforce: Senior Member of Technical Staff, San Francisco
+- PayPal: Senior Software Engineer, January 2023 to January 2026, built high-scale backend microservices in Go and Python on GCP, hundreds of millions of daily requests, strong SLAs, real-time analytics and cost optimization
+- Northeastern University: M.S. in Computer Science, teaching assistant roles in HCI and software engineering
+- Vymo: Senior Member of Technical Staff, distributed backend services in Java, Kafka, AWS Lambda, tens of millions of daily events, machine-learning lead scoring, reduced turnaround time by about 20 percent
+- Ittiam Systems: Software Engineer in computer vision and machine learning, Java Spring Boot and GKE, throughput up about 30 percent, analytics queries accelerated by about 40 percent
+
+Themes to emphasize:
+- distributed systems
+- reliability and observability
+- scale and measurable impact
+- backend engineering leadership
+- cloud architecture
+- event-driven platforms
+- applied machine learning
+- mentorship and teaching
+- helping F1 students and early-career engineers through content and guidance
+
+Useful links:
+- LinkedIn: https://www.linkedin.com/in/shreyas-rk
+- Personal site: https://www.shreyasrk.com
+- Calendly: https://calendly.com/shreyasrk95/meeting-1-1
+
+Projects and public-facing interests already visible in the repo:
+- YouTube channel and community building
+- TestPlay
+- SmrtGov
+
+Avoid:
+- inventing titles, dates, or metrics not grounded in the source context
+- reducing Shreyas to generic full-stack language when the stronger story is senior backend / cloud / distributed systems

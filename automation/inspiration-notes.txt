@@ -1,0 +1,28 @@
+Reference examples and takeaways:
+
+1. Tom Weightman
+URL: https://www.tomweightman.com/
+Takeaways:
+- confident, sparse landing page
+- strong signal through shipped work and recognizable companies
+- easy scanning of real-world impact
+
+2. Tamal Sen
+URL: https://tamalsen.dev/home/
+Takeaways:
+- strong personal aesthetic with subtle motion
+- project gallery has clear hierarchy and featured work
+- trust signals, testimonials, and collaboration framing are explicit
+
+3. Site Builder Report software engineer portfolio roundup
+URL: https://www.sitebuilderreport.com/inspiration/software-engineer-portfolios
+Takeaways:
+- clean information architecture matters
+- modern CV style sections can still feel polished
+- readability and spacing are critical even on visually rich sites
+
+Use these as directional references only:
+- stronger project storytelling
+- more visible credibility markers
+- clearer calls to action for recruiters and collaborators
+- more intentional motion and interaction, not random animation
