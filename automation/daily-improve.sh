@@ -19,6 +19,9 @@ trap 'rm -rf "$LOCK_DIR"' EXIT
 cd "$ROOT"
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+git checkout main >/dev/null 2>&1
+git pull --ff-only origin main >/dev/null 2>&1
+
 START_MARKER="$RUN_DIR/start.marker"
 touch "$START_MARKER"
 
@@ -28,6 +31,9 @@ CODEX_LOG="$RUN_DIR/codex.log"
 CHANGED_FILE="$RUN_DIR/changed-files.txt"
 STATUS_FILE="$RUN_DIR/status.txt"
 BUILD_LOG="$RUN_DIR/build.log"
+GIT_LOG="$RUN_DIR/git.log"
+
+PREV_SHA="$(git rev-parse HEAD)"
 
 PREV_HISTORY="$(tail -n 80 "$HISTORY_FILE" 2>/dev/null || true)"
 
@@ -68,6 +74,8 @@ find "$ROOT" \
   -type f -newer "$START_MARKER" -print | sed "s|$ROOT/||" | sort > "$CHANGED_FILE"
 
 BUILD_OK=0
+COMMIT_SHA=""
+PUSH_OK=0
 if [[ -s "$CHANGED_FILE" ]]; then
   set +e
   npm run build >"$BUILD_LOG" 2>&1
@@ -75,6 +83,12 @@ if [[ -s "$CHANGED_FILE" ]]; then
   set -e
   if [[ "$BUILD_EXIT" -eq 0 ]]; then
     BUILD_OK=1
+    if git add -A && git commit -m "chore: daily codex portfolio improvement ($RUN_TS)" >"$GIT_LOG" 2>&1; then
+      COMMIT_SHA="$(git rev-parse HEAD)"
+      if git push origin main >>"$GIT_LOG" 2>&1; then
+        PUSH_OK=1
+      fi
+    fi
   fi
 else
   BUILD_EXIT=0
@@ -85,6 +99,9 @@ fi
   echo "codex_exit=$CODEX_EXIT"
   echo "build_exit=$BUILD_EXIT"
   echo "build_ok=$BUILD_OK"
+  echo "prev_sha=$PREV_SHA"
+  echo "commit_sha=$COMMIT_SHA"
+  echo "push_ok=$PUSH_OK"
 } > "$STATUS_FILE"
 
 CHANGED_PREVIEW="$(sed -n '1,30p' "$CHANGED_FILE" 2>/dev/null || true)"
@@ -100,6 +117,9 @@ fi
   echo "## $RUN_TS"
   echo "- codex_exit: $CODEX_EXIT"
   echo "- build_ok: $BUILD_OK"
+  echo "- prev_sha: $PREV_SHA"
+  echo "- commit_sha: ${COMMIT_SHA:-none}"
+  echo "- push_ok: $PUSH_OK"
   echo "- changed_files:"
   while IFS= read -r line; do
     [[ -n "$line" ]] && echo "  - $line"
@@ -116,6 +136,9 @@ python3 "$ROOT/automation/send_telegram.py" \
   --message "Daily portfolio Codex run finished.
 codex_exit=$CODEX_EXIT
 build_ok=$BUILD_OK
+push_ok=$PUSH_OK
+prev_sha=$PREV_SHA
+commit_sha=${COMMIT_SHA:-none}
 
 Changed files:
 $CHANGED_PREVIEW
