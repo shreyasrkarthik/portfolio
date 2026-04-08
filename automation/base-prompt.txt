@@ -1,0 +1,19 @@
+Review this portfolio website and make exactly one small, high-value improvement.
+
+Primary goal:
+- attract more recruiters, hiring managers, senior engineers, and potential collaborators
+
+Secondary goals:
+- make the site feel more interactive, memorable, and polished
+- add concrete context around Shreyas's projects and experience
+- improve credibility, clarity, and scannability
+
+Rules:
+- Use the LinkedIn context below as source of truth for career facts and timeline.
+- Use the inspiration notes below for design direction, but do not copy another site's layout or wording.
+- Build on the most recent logged improvement instead of repeating the same type of change.
+- Prefer one bounded improvement touching a small set of files.
+- Favor changes with visible impact on homepage content, storytelling, interaction quality, or conversion.
+- Keep the site professional enough for recruiters, but distinctive and technically impressive.
+- Preserve the current 3D / interactive character unless there is a strong reason to tone it down.
+- End with a concise summary of what changed and why it should improve recruiter or collaborator appeal.
