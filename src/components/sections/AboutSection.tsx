@@ -177,7 +177,7 @@ export default function AboutSection() {
                 { val: '9+', label: 'Years of Engineering', color: '#D97706' },
                 { val: '4.0', label: 'M.S. GPA @ NEU', color: '#7C3AED' },
                 { val: '100M+', label: 'Daily Txns Handled', color: '#D97706' },
-                { val: '200K+', label: 'YouTube Community', color: '#10B981' },
+                { val: '4', label: 'Companies Scaled', color: '#10B981' },
               ].map((item, i) => (
                 <motion.div
                   key={i}

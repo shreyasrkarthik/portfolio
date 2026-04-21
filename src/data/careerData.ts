@@ -179,40 +179,40 @@ export const projectsData = [
     icon: "🎮"
   },
   {
-    id: "youtube",
-    title: "YouTube Channel",
-    tagline: "200K+ subscribers · Tech & career content",
+    id: "readrecall",
+    title: "ReadRecall",
+    tagline: "AI reading companion — no spoilers, ever",
     description:
-      "Built a community of 200,000+ engineers and CS students focused on F1 visa navigation, tech career growth, distributed systems deep-dives, and system design interview prep.",
-    tags: ["Education", "Community", "Video", "Career"],
-    link: "https://youtube.com/@shreyasrk",
+      "Upload any EPUB or choose a public domain classic and get AI-generated summaries and character breakdowns capped to exactly where you are in the book. OpenAI GPT + Next.js 14 + PostgreSQL.",
+    tags: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL"],
+    link: "https://readrecall.vercel.app",
     status: "live",
     featured: true,
-    icon: "📺"
+    icon: "📖"
   },
   {
-    id: "smrtgov",
-    title: "SmrtGov",
-    tagline: "Civic tech for citizen engagement",
+    id: "just-one-place",
+    title: "just-one-place",
+    tagline: "One perfect recommendation based on your mood",
     description:
-      "A civic tech platform enabling citizens to file, track, and escalate government service complaints. Built with PHP and Bootstrap with a focus on accessibility and broad geographic reach.",
-    tags: ["PHP", "Bootstrap", "Civic Tech", "Web"],
-    link: "#",
-    status: "archived",
+      "Enter your ZIP code, pick a mood, get exactly one curated place recommendation — no endless scrolling. Powered by Foursquare Places API with intelligent mood-to-category mapping.",
+    tags: ["React", "TypeScript", "Vite", "Foursquare API"],
+    link: "https://github.com/shreyasrkarthik/just-one-place",
+    status: "live",
     featured: false,
-    icon: "🏛️"
+    icon: "📍"
   },
   {
-    id: "gender-cv",
-    title: "Gender Classification via CV",
-    tagline: "Computer vision research at Northeastern",
+    id: "aquasync",
+    title: "AquaSync",
+    tagline: "Water treatment plant monitoring dashboard",
     description:
-      "Research project applying convolutional neural networks and facial feature extraction for demographic classification. Explored fairness tradeoffs and dataset bias in production ML systems.",
-    tags: ["Python", "OpenCV", "PyTorch", "Research"],
-    link: "#",
-    status: "research",
+      "FastAPI backend + React/TypeScript frontend for real-time sensor data monitoring at water treatment facilities. Tracks energy consumption, water quality metrics, and asset health.",
+    tags: ["FastAPI", "Python", "React", "TypeScript"],
+    link: "https://github.com/shreyasrkarthik/aquasyncsvc",
+    status: "live",
     featured: false,
-    icon: "🔬"
+    icon: "💧"
   }
 ];
 

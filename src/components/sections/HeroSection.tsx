@@ -13,9 +13,9 @@ const TITLES = [
 
 const STATS = [
   { label: 'Daily Transactions', value: '100M+', suffix: '', icon: '⚡' },
-  { label: 'YouTube Subscribers', value: '200K+', suffix: '', icon: '📡' },
   { label: 'Years Engineering', value: '9+', suffix: '', icon: '🛠' },
   { label: 'Companies Scaled', value: '4', suffix: '', icon: '🚀' },
+  { label: 'YouTube Channel', value: '@shreyasrk', suffix: '', icon: '📡' },
 ];
 
 function useCountUp(target: number, duration = 1800, active = false) {
