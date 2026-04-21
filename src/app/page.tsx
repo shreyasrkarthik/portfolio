@@ -2,37 +2,62 @@
 
 import dynamic from 'next/dynamic';
 import { ReactLenis } from '@studio-freight/react-lenis';
-import HeroOverlay from '../components/ui/HeroOverlay';
 import { Canvas } from '@react-three/fiber';
-import { Environment } from '@react-three/drei';
 import { Suspense } from 'react';
 
-const NetworkGraph = dynamic(() => import('../components/3d/NetworkGraph'), { ssr: false });
+import { GameProvider } from '../context/GameContext';
+import BootSequence from '../components/game/BootSequence';
+import GameHUD from '../components/game/GameHUD';
+import AchievementToast from '../components/game/AchievementToast';
+import HeroSection from '../components/sections/HeroSection';
+import AboutSection from '../components/sections/AboutSection';
+import ExperienceSection from '../components/sections/ExperienceSection';
+import SkillsSection from '../components/sections/SkillsSection';
+import ProjectsSection from '../components/sections/ProjectsSection';
+import CommunitySection from '../components/sections/CommunitySection';
+import ContactSection from '../components/sections/ContactSection';
+
+const NetworkGraph = dynamic(() => import('../components/3d/NetworkGraph'), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <ReactLenis root>
-      <main className="w-full min-h-screen relative font-sans selection:bg-cyan-500 selection:text-black">
-        
-        {/* Fixed 3D Canvas Background */}
-        <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
-          <Canvas 
-            camera={{ position: [0, 8, 20], fov: 45 }}
-            gl={{ antialias: true, alpha: true }}
-          >
-            <Suspense fallback={null}>
-              <NetworkGraph />
-              <Environment preset="city" />
-            </Suspense>
-          </Canvas>
-        </div>
+    <GameProvider>
+      <ReactLenis root>
+        <main className="relative w-full min-h-screen bg-[#0C0A08] text-[#FAF9F7] font-sans">
 
-        {/* Scrollable Overlay Content */}
-        <div id="scroll-container" className="relative z-10 w-full">
-          <HeroOverlay />
-        </div>
+          {/* Fixed 3D ambient background */}
+          <div className="fixed inset-0 z-0 pointer-events-none">
+            <Canvas
+              camera={{ position: [0, 2, 22], fov: 55 }}
+              gl={{ antialias: true, alpha: true }}
+              dpr={[1, 1.5]}
+            >
+              <Suspense fallback={null}>
+                <NetworkGraph />
+              </Suspense>
+            </Canvas>
+          </div>
 
-      </main>
-    </ReactLenis>
+          {/* Game overlay elements */}
+          <BootSequence />
+          <GameHUD />
+          <AchievementToast />
+
+          {/* Page sections */}
+          <div className="relative z-10">
+            <HeroSection />
+            <AboutSection />
+            <ExperienceSection />
+            <SkillsSection />
+            <ProjectsSection />
+            <CommunitySection />
+            <ContactSection />
+          </div>
+
+        </main>
+      </ReactLenis>
+    </GameProvider>
   );
 }
